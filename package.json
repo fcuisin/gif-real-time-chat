@@ -15,11 +15,17 @@
   "author": "Ferdinouche",
   "license": "ISC",
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@mantine/core": "^6.0.1",
+    "@mantine/hooks": "^6.0.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^7.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -28,6 +34,7 @@
     "@types/node": "^18.14.6",
     "@types/parcel-bundler": "^1.12.5",
     "@types/react": "^18.0.28",
+    "@types/uuid": "^9.0.1",
     "parcel-bundler": "^1.12.5",
     "ts-node-dev": "^2.0.0",
     "tslint": "^6.1.3",
