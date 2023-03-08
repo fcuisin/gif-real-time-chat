@@ -9,11 +9,13 @@
       "sourceMap": true,
       "outDir": "dist",
       "baseUrl": ".",
+      "strict": false,
+      "resolveJsonModule": true,
       "paths": {
         "*": [
           "node_modules/*"
         ]
-      }
+      },
     },
     "include": [
       "src/**/*"
