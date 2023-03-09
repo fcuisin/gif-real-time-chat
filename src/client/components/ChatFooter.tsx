@@ -1,17 +1,18 @@
-import React, { ActionIcon, Group, TextInput } from "@mantine/core";
+import React, { ActionIcon, Button, Group, TextInput } from "@mantine/core";
 import { EVENTS } from "../config/constants";
 import { useState } from "react";
 import { Socket } from "socket.io-client";
 import { useSockets } from "../contexts/SocketContext";
 
 export default function ChatFooter() {
-  const { socket } = useSockets();
+  const { socket, openedRoomId } = useSockets();
   const [message, setMessage] = useState<string>("");
 
   const onSubmitMessage = (value: string) => {
     if (!value.trim()) return;
 
     socket.emit(EVENTS.CLIENT.SEND_MESSAGE, {
+      roomId: openedRoomId,
       message: value,
       username: socket.id,
     });
@@ -19,13 +20,14 @@ export default function ChatFooter() {
   };
 
   return (
-    <Group>
+    <Group align="center" mt="xl">
       <TextInput
-        label="message"
         value={message}
         onChange={({ currentTarget }) => setMessage(currentTarget.value)}
       />
-      <ActionIcon onClick={() => onSubmitMessage(message)}>Send</ActionIcon>
+      <Button variant="default" onClick={() => onSubmitMessage(message)}>
+        Send
+      </Button>
     </Group>
   );
 }
