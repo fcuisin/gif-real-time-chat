@@ -4,8 +4,9 @@
         "es6",
         "dom"
       ],
+      "strict": false,
       "allowSyntheticDefaultImports": true,
-      "jsx": "react",
+      "jsx": "react-jsx",
       "module": "es6",
       "target": "es6",
       "moduleResolution": "node",
@@ -16,7 +17,7 @@
         "*": [
           "../../node_modules/*"
         ]
-      }
+      },
     },
     "include": [
       "./**/*"
